@@ -45,7 +45,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context: GetStaticPropsContext) {
     const {params} = context;
-    if (!params)    return;
+    if (!params  || typeof params.userId !== "string")    return;
     const blogs = await getUsersBlogs(params.userId);
     const user = await getUserById(params.userId)
     return {

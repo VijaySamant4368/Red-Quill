@@ -41,9 +41,17 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context: GetStaticPropsContext) {
     const {params} = context
+        if (!params || typeof params.slug !== "string") {
+        return {
+            notFound: true,
+        };
+    }
     // const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${params.slug}`)
     const resopnse = await getBlogById(params.slug)
     // const data = await data.json()
+    if (!resopnse)  return {
+            notFound: true,
+    }
     const data = resopnse.data
     return {
         props: {
