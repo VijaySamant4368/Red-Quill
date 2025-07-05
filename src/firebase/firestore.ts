@@ -16,16 +16,16 @@ export async function addBlog(data:Blog){
         id: docRef.id
       }
     });
-      console.log("Document written with ID: ", docRef.id);
-      console.table(data)
+      // console.log("Document written with ID: ", docRef.id);
+      // console.table(data)
     } catch (e) {
-      console.error("Error adding document: ", e);
+      // console.error("Error adding document: ", e);
     }
 }
 
 export async function getAllBlogs() {
   const querySnapshot = await getDocs(collection(db_firestore, "blogs"));
-  console.log("Total documents:", querySnapshot.size);
+  // console.log("Total documents:", querySnapshot.size);
   const docs:Array<Blog> = []
   querySnapshot.forEach((doc:any) => {
     // doc.data() is never undefined for query doc snapshots
@@ -41,11 +41,11 @@ export async function getBlogById(blogId:string) {
     const docSnap = await getDoc(docRef);
 
     if (docSnap.exists()) {
-        console.log("Document data:", docSnap.data());
+        // console.log("Document data:", docSnap.data());
         return docSnap.data()    
     } else {
     // docSnap.data() will be undefined in this case
-    console.log("No such document!");
+    // console.log("No such document!");
         return null
     }
 }
@@ -62,7 +62,7 @@ export async function getUsersBlogs(userId:string) {
      data.id = doc.id
      blogs.push(data);
   });
-  console.log("userId", "==", userId)
+  // console.log("userId", "==", userId)
   return blogs;
 }
 
@@ -77,7 +77,7 @@ export async function getAllUsers(): Promise<UserType[]> {
     users.push(user);
   });
 
-  // console.log("✅ Found users:", users.length);
-  // console.table(users)
+  // // console.log("✅ Found users:", users.length);
+  // // console.table(users)
   return users;
 }

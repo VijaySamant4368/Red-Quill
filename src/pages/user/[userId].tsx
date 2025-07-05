@@ -10,16 +10,24 @@ export default function UserDetails(props: any) {
 
   // Optional loading state for fallback: true
   if (router.isFallback) {
-    return <div className="p-8 text-center">Loading user...</div>;
+    return (
+      <div className="min-h-screen flex items-center justify-center px-4 bg-transparent">
+        <p className="text-white text-lg font-medium animate-pulse custom-effect">
+          Loading user...
+        </p>
+      </div>
+    )
   }
 
   const blogs = props.data;
   const user = props.userData;
 
   return (
-    <div>
+    <div className="min-h-screen px-4 py-12 bg-transparent flex flex-col items-center space-y-8">
       <UserProfile user={user} />
-      <BlogInfo blogLists={blogs} />
+      <div className="w-full max-w-4xl">
+        <BlogInfo blogLists={blogs} />
+      </div>
     </div>
   );
 }

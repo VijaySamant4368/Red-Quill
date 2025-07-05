@@ -40,9 +40,9 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <UserContext.Provider value={{ user, loading }}>
-      <div className="flex flex-col min-h-screen bg-gray-50">
+      <div className="min-h-screen flex flex-col">
         <Header/>
-        <main className="flex-grow px-6 py-8">
+          <main className="flex-1 container mx-auto px-4 py-8">
           <Component {...pageProps} />
         </main>
         <Footer />

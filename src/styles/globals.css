@@ -1,12 +1,13 @@
 @import "tailwindcss";
 
 .custom-hover {
-    display: inline-block;
-    cursor: pointer;
-    transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+  color: theme('colors.white');
 }
 
 .custom-hover:hover {
-    color: #f87171; /* Tailwind's red-400 */
-     transform: scale(1.5);
+  color: theme('colors.pink.400');
+  transform: scale(1.3);
 }

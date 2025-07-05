@@ -41,46 +41,47 @@ export default function createBlog() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 p-6">
+    <div className="min-h-screen flex items-center justify-center px-4 py-12 bg-transparent">
       <form
         onSubmit={handleSubmission}
-        className="bg-white shadow-lg rounded-lg p-8 w-full max-w-md space-y-6"
+        className="w-full max-w-2xl bg-white/10 backdrop-blur-md border border-white/20 p-8 rounded-2xl shadow-xl text-white space-y-6 custom-effect"
       >
-        <h2 className="text-2xl font-bold text-gray-800">Create a Blog</h2>
+        <h1 className="text-3xl font-bold text-center">Create New Blog</h1>
 
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Blog Title</label>
+        <div className="space-y-2">
+          <label className="block text-sm text-white/80">Title</label>
           <input
             type="text"
             name="title"
-            value={formData.title}
             onChange={handleChange}
-            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            placeholder="Enter blog title"
+            value={formData.title}
             required
+            className="w-full px-4 py-2 rounded-lg bg-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-pink-400"
+            placeholder="Enter blog title"
           />
         </div>
 
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Blog Content</label>
+        <div className="space-y-2">
+          <label className="block text-sm text-white/80">Body</label>
           <textarea
             name="body"
-            value={formData.body}
             onChange={handleChange}
-            rows={5}
-            className="w-full border border-gray-300 rounded px-3 py-2 resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
-            placeholder="Write your blog here..."
+            value={formData.body}
             required
-          ></textarea>
+            rows={6}
+            className="w-full px-4 py-2 rounded-lg bg-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-pink-400"
+            placeholder="Write your blog content..."
+          />
         </div>
 
         <button
           type="submit"
-          className="w-full bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition duration-200"
+          disabled={isSending}
+          className="w-full py-2 px-4 bg-pink-500 hover:bg-pink-600 transition-colors text-white font-semibold rounded-lg shadow-md disabled:opacity-50"
         >
-          {isSending? "Adding blog": "Submit"}
+          {isSending ? "Publishing..." : "Publish"}
         </button>
       </form>
     </div>
-  );
+);
 }

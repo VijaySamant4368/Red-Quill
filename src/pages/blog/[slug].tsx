@@ -14,7 +14,13 @@ export default function BlogPost(props: BlogData) {
 
   // Optional loading state for fallback: true
   if (router.isFallback) {
-    return <div className="p-8 text-center">Loading blog...</div>;
+        return (
+      <div className="min-h-screen flex items-center justify-center px-6 bg-transparent">
+        <div className="text-white text-lg font-medium animate-pulse custom-effect">
+          Loading blog...
+        </div>
+      </div>
+    );
   }
 
   const blog = props.data.data;

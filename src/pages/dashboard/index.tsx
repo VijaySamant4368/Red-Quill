@@ -8,21 +8,23 @@ export default function Dashboard(props: BlogProps) {
   const items = props.items || [];
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <div className="max-w-4xl mx-auto px-4 py-8">
-        <h1 className="text-3xl font-bold mb-6">Dashboard</h1>
+        <div className="min-h-screen px-4 py-12 flex justify-center bg-transparent">
+      <div className="max-w-4xl w-full space-y-8 bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/20 shadow-xl text-white custom-effect">
+        <h1 className="text-4xl font-extrabold tracking-tight">📊 Dashboard</h1>
 
         <BlogInfo blogLists={items} />
 
-        <Link
-          href="/dashboard/create"
-          className="inline-block mt-6 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
-        >
-          ➕ Create a Blog
-        </Link>
+        <div className="text-right">
+          <Link
+            href="/dashboard/create"
+            className="inline-block mt-4 px-5 py-2 bg-pink-500 hover:bg-pink-600 transition-colors text-white font-semibold rounded-lg shadow-md"
+          >
+            ➕ Create a Blog
+          </Link>
+        </div>
       </div>
     </div>
-  );
+  )
 }
 
 export async function getStaticProps() {

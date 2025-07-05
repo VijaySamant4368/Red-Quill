@@ -12,11 +12,11 @@ export async function getUserById(uid: string) {
             // Document exists, return user data
             return docSnap.data();
         } else {
-            console.log('No user found with this UID!:', uid);
+            // console.log('No user found with this UID!:', uid);
             return null;
         }
     } catch (error) {
-        console.error('Error getting user by UID: ', error);
+        // console.error('Error getting user by UID: ', error);
         return null;
     }
 }

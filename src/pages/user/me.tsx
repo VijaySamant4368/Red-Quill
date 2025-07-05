@@ -37,18 +37,25 @@ export default function myProfile(){
     }, [user, router, loading])
     
     if (loading) {
-        return <h1>Loading user data...</h1>; // ✅ This is correct
+        return (
+      <div className="min-h-screen flex items-center justify-center px-4 bg-transparent">
+        <p className="text-white text-lg font-medium animate-pulse custom-effect">
+          Loading profile...
+        </p>
+      </div>
+        )
     }
 
     if (!user) return <></>;
-    // console.log(myBlogs)
+    // // console.log(myBlogs)
 
     return(
-        // <h1>Hi</h1>
-        <div>
-            <UserProfile user = {myUser}  />
-            <BlogInfo blogLists={myBlogs} />
-        </div>
+    <div className="min-h-screen px-4 py-12 bg-transparent flex flex-col items-center space-y-8">
+      <UserProfile user={myUser} />
+      <div className="w-full max-w-4xl">
+        <BlogInfo blogLists={myBlogs} />
+      </div>
+    </div>
     )
 
 }
