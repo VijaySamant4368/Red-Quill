@@ -1,3 +1,4 @@
+import { Layout } from "@/components/layout";
 import { logInUser } from "@/firebase/firebase-auth";
 import { useRouter } from "next/router";
 import React, { useState } from "react"
@@ -32,7 +33,9 @@ export default function  logIn() {
     }
 
     return(
-        <div className="min-h-screen flex items-center justify-center px-4 py-12 bg-transparent">
+      <>
+      <Layout title={"Login"}/>
+      <div className="min-h-screen flex items-center justify-center px-4 py-12 bg-transparent">
       <form
         onSubmit={handleSubmit}
         className="bg-white/10 backdrop-blur-md p-8 rounded-xl shadow-xl border border-white/20 text-white w-full max-w-md space-y-6 custom-effect"
@@ -74,5 +77,6 @@ export default function  logIn() {
         </button>
       </form>
     </div>
+    </>
     )
 }

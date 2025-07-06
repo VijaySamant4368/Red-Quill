@@ -6,6 +6,7 @@ import Blog from "@/types/Blog";
 import UserProfile from "@/components/userProfile";
 import { UserType } from "@/types/User";
 import BlogInfo from "@/components/blog-info";
+import { Layout } from "@/components/layout";
 
 export default function myProfile(){
     const {user, loading} = useContext(UserContext);
@@ -50,12 +51,15 @@ export default function myProfile(){
     // // console.log(myBlogs)
 
     return(
+        <>
+        <Layout title="My Profile" />
     <div className="min-h-screen px-4 py-12 bg-transparent flex flex-col items-center space-y-8">
       <UserProfile user={myUser} />
       <div className="w-full max-w-4xl">
         <BlogInfo blogLists={myBlogs} />
       </div>
     </div>
+    </>
     )
 
 }

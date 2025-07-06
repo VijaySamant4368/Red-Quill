@@ -1,7 +1,10 @@
+import { Layout } from "@/components/layout";
 import Link from "next/link";
 
 export default function PageNotFound() {
   return (
+    <>
+    <Layout title="Page Not Found" />
     <div className="min-h-screen flex items-center justify-center px-4 bg-transparent">
       <div className="max-w-md w-full bg-white/10 backdrop-blur-md p-8 rounded-2xl shadow-2xl border border-white/20 text-white text-center space-y-4 custom-effect">
         <h1 className="text-6xl font-extrabold text-pink-500">404</h1>
@@ -17,5 +20,6 @@ export default function PageNotFound() {
         </Link>
       </div>
     </div>
+    </>
   );
 }

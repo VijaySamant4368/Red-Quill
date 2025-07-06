@@ -2,6 +2,7 @@ import { addBlog } from "@/firebase/firestore";
 import React, { FormEvent, useState, useContext, useEffect } from "react";
 import { UserContext } from "../_app";
 import { useRouter } from "next/router";
+import { Layout } from "@/components/layout";
 
 export default function createBlog() {
   const {user, loading} = useContext(UserContext)
@@ -41,6 +42,8 @@ export default function createBlog() {
   }
 
   return (
+  <>
+  <Layout title="Create a blog"/>
     <div className="min-h-screen flex items-center justify-center px-4 py-12 bg-transparent">
       <form
         onSubmit={handleSubmission}
@@ -83,5 +86,6 @@ export default function createBlog() {
         </button>
       </form>
     </div>
+  </>
 );
 }

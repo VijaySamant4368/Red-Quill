@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import { useContext, useEffect, useState, createContext } from "react";
 import { auth } from "@/firebase/firebase";
 import { onAuthStateChanged, User } from "firebase/auth";
+import { Layout } from "@/components/layout";
 
 // export const UserContext = createContext<User | undefined | null>(undefined)
 
@@ -39,6 +40,8 @@ export default function App({ Component, pageProps }: AppProps) {
   }, [])
 
   return (
+    <>
+    <Layout title="Red-Quill" />
     <UserContext.Provider value={{ user, loading }}>
       <div className="min-h-screen flex flex-col">
         <Header/>
@@ -48,5 +51,6 @@ export default function App({ Component, pageProps }: AppProps) {
         <Footer />
       </div>
     </UserContext.Provider>
+    </>
   );
 }

@@ -10,7 +10,7 @@ export default function Dashboard(props: BlogProps) {
   return (
         <div className="min-h-screen px-4 py-12 flex justify-center bg-transparent">
       <div className="max-w-4xl w-full space-y-8 bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/20 shadow-xl text-white custom-effect">
-        <h1 className="text-4xl font-extrabold tracking-tight">📊 Dashboard</h1>
+        <h1 className="text-4xl font-extrabold tracking-tight">Dashboard</h1>
 
         <BlogInfo blogLists={items} />
 

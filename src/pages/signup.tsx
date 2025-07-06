@@ -1,3 +1,4 @@
+import { Layout } from "@/components/layout";
 import { signUpUser } from "@/firebase/firebase-auth";
 import { useRouter } from "next/router";
 import React, { useState } from "react"
@@ -33,6 +34,8 @@ export default function  signUp() {
     }
 
     return(
+    <>
+    <Layout title="Signup"/>
     <div className="min-h-screen flex items-center justify-center px-4 py-12 bg-transparent">
       <form
         onSubmit={handleSubmit}
@@ -93,5 +96,6 @@ export default function  signUp() {
         </button>
       </form>
     </div>
+    </>
     )
 }

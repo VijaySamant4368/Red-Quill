@@ -33,25 +33,25 @@ export default function Home() {
           {!user && 
             <li>
               <Link href="/login" className="hover:text-pink-300 transition-colors">
-                🔐 Login
+                Login
               </Link>
             </li>
           }
           {!user && 
             <li>
               <Link href="/signup" className="hover:text-pink-300 transition-colors">
-                📝 Sign Up
+                Sign Up
               </Link>
             </li>
           }
           <li>
             <Link href="/about" className="hover:text-pink-300 transition-colors">
-              📘 About
+              About
             </Link>
           </li>
           <li>
             <Link href="/dashboard" className="hover:text-pink-300 transition-colors">
-              📊 Dashboard
+              Dashboard
             </Link>
           </li>
         </ul>

@@ -1,4 +1,5 @@
 import BlogInfo from "@/components/blog-info";
+import { Layout } from "@/components/layout";
 import UserProfile from "@/components/userProfile";
 import { getAllUsers, getUsersBlogs } from "@/firebase/firestore";
 import { getUserById } from "@/lib/user";
@@ -23,12 +24,15 @@ export default function UserDetails(props: any) {
   const user = props.userData;
 
   return (
-    <div className="min-h-screen px-4 py-12 bg-transparent flex flex-col items-center space-y-8">
-      <UserProfile user={user} />
-      <div className="w-full max-w-4xl">
-        <BlogInfo blogLists={blogs} />
+      <>
+      <Layout title={`${user?.username || "User"}'s Profile`} />
+      <div className="min-h-screen px-4 py-12 bg-transparent flex flex-col items-center space-y-8">
+        <UserProfile user={user} />
+        <div className="w-full max-w-4xl">
+          <BlogInfo blogLists={blogs} />
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
