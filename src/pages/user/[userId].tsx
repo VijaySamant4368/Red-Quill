@@ -39,7 +39,7 @@ export async function getStaticPaths() {
     }));
     return {
         paths:  paths,
-        fallback: false
+        fallback: "blocking"
     }
 }
 
@@ -57,6 +57,6 @@ export async function getStaticProps(context: GetStaticPropsContext) {
               username: user?.username,
               password: ""
             }
-        },
+          }, revalidate: 5
     }
 }
